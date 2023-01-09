@@ -1,0 +1,8 @@
+.App {
+  text-align: center;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-self: center;
+  background-image: linear-gradient(79deg, #818128,#a15fa1,#5d7a93);
+}
