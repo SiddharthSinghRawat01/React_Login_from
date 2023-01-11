@@ -1,4 +1,5 @@
 import React,{ useState } from 'react';
+import './Register.css'
 
 export const Register = (props) => {
 
@@ -13,18 +14,24 @@ export const Register = (props) => {
 
     return (
         <>
-        <div className="auth-form-container">
-            <form onSubmit={handelSubmit}>
-                <label htmlFor="name">full Name</label>
-                <input value={name} onChange={(e)=> setEmail(e.target.value)} type="text" placeholder="Full Name" id="name" name="name" />
-                <label htmlFor="email">email</label>
-                <input value={email} onChange={(e)=> setEmail(e.target.value)} type="email" placeholder="youremail@gmail.com" id="email" name="email" />
-                <label htmlFor="password">password</label>
-                <input value={password} onChange={(e)=> setPass(e.target.value)} type="password" placeholder="*******" id="password" name="password" />
-                <button type="submit">Log In</button>
+        <div id="login-form-wrap">
+        <h2>Register</h2>
+            <form onSubmit={handelSubmit} id="login-form">
+                <p>
+                <input value={name} onChange={(e)=> setEmail(e.target.value)} type="text" placeholder="Full Name" id="name" name="name" /><i class="validation"></i>    
+                </p>
+                <p>
+                <input value={email} onChange={(e)=> setEmail(e.target.value)} type="email" placeholder="youremail@gmail.com" id="email" name="email" /><i class="validation"></i>
+                </p>
+                <p>
+                <input value={password} onChange={(e)=> setPass(e.target.value)} type="password" placeholder="*******" id="password" name="password" /><i class="validation"><span></span><span></span></i>
+                </p>
+                <input type="submit" id='signup' value="Signup"></input>
             </form>
-            <button onClick={() => props.onFormSwitch("login")} >Already have an accout? Login here</button>
+            <div id="create-account-wrap">
+                <button id="click-button" onClick={() => props.onFormSwitch("login")} ><p>Already have an accout? Login here</p></button>
             </div>
+        </div>
         </>
     )
 }
